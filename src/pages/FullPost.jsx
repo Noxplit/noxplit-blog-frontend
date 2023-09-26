@@ -26,7 +26,7 @@ if(isLoadingFullPost) {
       <Post
         id={1}
         title={post.title}
-        imageUrl={post.imageUrl ? `http://localhost:4444${post.imageUrl}` : ''}
+        imageUrl={post.imageUrl ? `${process.env.REACT_API_BACKEND_URL}/${post.imageUrl}` : ''}
         user={post.user}
         createdAt={post.createdAt}
         viewsCount={post.viewsCount}

@@ -47,7 +47,7 @@ return 0
        {(isPostLoading ?[...Array(5)] : populate ? sortedPosts : id ? filter : posts.items).map((item,index) => isPostLoading ? (<Post isLoading={true} key={index}/>) : (<Post
               id={item._id}
               title={item.title}
-              imageUrl={item.imageUrl ? `http://localhost:4444${item.imageUrl}` : ''}
+              imageUrl={item.imageUrl ? `${process.env.REACT_API_BACKEND_URL}/${item.imageUrl}` : ''}
               user={item.user}
               createdAt={item.createdAt}
               viewsCount={item.viewsCount}

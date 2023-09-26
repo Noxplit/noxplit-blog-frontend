@@ -113,7 +113,7 @@ console.log(isEditing);
 							</Button>
 							<img
 								className={styles.image}
-								src={`http://localhost:4444${imageUrl}`}
+								src={`${process.env.REACT_API_BACKEND_URL}/${imageUrl}`}
 								alt='Uploaded'
 							/>
 						</>
