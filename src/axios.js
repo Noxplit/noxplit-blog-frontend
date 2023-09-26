@@ -1,7 +1,8 @@
 import axios from "axios";
+import { REACT_APP_BACKEND_URL } from "./utils/constanst";
 
 const instance = axios.create({
-  baseURL:process.env.REACT_API_BACKEND_URL,
+  baseURL:REACT_APP_BACKEND_URL
 })
 
 instance.interceptors.request.use(config => {

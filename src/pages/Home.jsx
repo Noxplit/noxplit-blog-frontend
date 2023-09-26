@@ -8,6 +8,7 @@ import { CommentsBlock } from '../components/CommentsBlock';
 import { fetchPosts, fetchTags } from '../components/redux/slices/post.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { REACT_APP_BACKEND_URL } from '../utils/constanst';
 
 export const Home = () => {
   const {id} = useParams()
@@ -47,7 +48,7 @@ return 0
        {(isPostLoading ?[...Array(5)] : populate ? sortedPosts : id ? filter : posts.items).map((item,index) => isPostLoading ? (<Post isLoading={true} key={index}/>) : (<Post
               id={item._id}
               title={item.title}
-              imageUrl={item.imageUrl ? `${process.env.REACT_API_BACKEND_URL}/${item.imageUrl}` : ''}
+              imageUrl={item.imageUrl ? `${REACT_APP_BACKEND_URL}${item.imageUrl}` : ''}
               user={item.user}
               createdAt={item.createdAt}
               viewsCount={item.viewsCount}

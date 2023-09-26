@@ -9,6 +9,7 @@ import styles from './AddPost.module.scss'
 import { useSelector } from 'react-redux'
 import { Navigate, useNavigate, Link, useParams } from 'react-router-dom'
 import axios from '../../axios.js'
+import { REACT_APP_BACKEND_URL } from '../../utils/constanst'
 
 export const AddPost = () => {
   const {id} = useParams()
@@ -113,7 +114,7 @@ console.log(isEditing);
 							</Button>
 							<img
 								className={styles.image}
-								src={`${process.env.REACT_API_BACKEND_URL}/${imageUrl}`}
+								src={`${REACT_APP_BACKEND_URL}/${imageUrl}`}
 								alt='Uploaded'
 							/>
 						</>
