@@ -4,7 +4,6 @@ import Tab from '@mui/material/Tab';
 import Grid from '@mui/material/Grid';
 import { Post } from '../components/Post';
 import { TagsBlock } from '../components/TagsBlock';
-import { CommentsBlock } from '../components/CommentsBlock';
 import { fetchPosts, fetchTags } from '../components/redux/slices/post.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -43,7 +42,7 @@ return 0
         <Tab label="Популярные" onClick={() => setPopulate(true)} />
       </Tabs>
       <Grid container spacing={4}>
-        <Grid xs={8} item>
+        <Grid width={'100%'}  item>
       
        {(isPostLoading ?[...Array(5)] : populate ? sortedPosts : id ? filter : posts.items).map((item,index) => isPostLoading ? (<Post isLoading={true} key={index}/>) : (<Post
               id={item._id}
@@ -59,7 +58,7 @@ return 0
         ) }
          
         </Grid>
-        <Grid xs={4} item>
+        <Grid width={'100%'}  item>
           <TagsBlock items={tags.items} isLoading={isTagLoading} />
           
         </Grid>

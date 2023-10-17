@@ -8,15 +8,14 @@
 .inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   background-color: black;
   color: #fff;
   font-weight: 700;
-  line-height: 35px;
   text-transform: uppercase;
-  letter-spacing: 0.15px;
   border-radius: 5px;
   padding: 0 10px;
   text-decoration: none;
